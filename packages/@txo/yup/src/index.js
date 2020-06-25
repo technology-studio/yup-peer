@@ -14,6 +14,7 @@ import { generateInitialValues } from './Api/GenerateInitialValues'
 import {
   dateSchema,
   numberSchema,
+  phoneNumberSchema,
   relationSchema,
   requiredDateSchema,
   requiredNumberSchema,
@@ -28,6 +29,7 @@ export {
   dateSchema,
   generateInitialValues,
   numberSchema,
+  phoneNumberSchema,
   relationSchema,
   requiredDateSchema,
   requiredNumberSchema,
