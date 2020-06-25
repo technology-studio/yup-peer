@@ -59,7 +59,6 @@ declare module 'yup' {
     clone(): Schema,
     label(label: string): Schema,
     meta(metadata: any): Schema,
-    meta(): any,
     describe(): SchemaDescription,
     concat(schema: Schema): Schema,
     validate<U>(
@@ -77,6 +76,7 @@ declare module 'yup' {
     default(value?: any): Schema,
     nullable(isNullable?: boolean): Schema,
     required(message?: string): Schema,
+    requiredRelation(message?: string): Schema,
     email(message?: string): Schema,
     typeError(message?: string): Schema,
     oneOf(arrayOfValues: any[], message?: string): Schema,
