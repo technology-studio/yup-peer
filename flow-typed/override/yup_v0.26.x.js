@@ -99,6 +99,7 @@ declare module 'yup' {
     // project extensions
     numbersOnly(message?: Message): Schema,
     equalsTo(key: string, message?: Message): Schema,
+    phoneNumber(ref: any, message?: Message): Schema,
   };
 
   declare type Yup = {

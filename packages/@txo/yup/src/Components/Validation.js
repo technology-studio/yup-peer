@@ -24,3 +24,5 @@ export const dateSchema = () => Yup.date().nullable()
 
 export const numberSchema = () => Yup.number().numbersOnly().nullable()
 export const requiredNumberSchema = () => Yup.string().numbersOnly().nullable().required()
+
+export const requiredPhoneNumberSchema = () => Yup.string().trim().phoneNumber().required()
