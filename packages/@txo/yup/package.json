@@ -26,7 +26,7 @@
     "build:watch:flow": "yarn flow-copy-source --verbose -w -i '**/__tests__/**' src lib"
   },
   "dependencies": {
-    "@txo/functional": "^3.1.0",
+    "@txo/functional": "^3.1.1",
     "@txo/log": "^1.0.0",
     "awesome-phonenumber": "^2.35.0"
   },
