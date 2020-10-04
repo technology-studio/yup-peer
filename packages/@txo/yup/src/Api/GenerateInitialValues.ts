@@ -6,34 +6,31 @@
 
 import { Log } from '@txo/log'
 
+import type { SchemaFieldDescription, SchemaDescription, SchemaFieldRefDescription } from 'yup'
+
 const log = new Log('app.Modules.Yup.Api.GenerateInitialValues')
-
-type PrimitiveDescription = {
-  type: 'string' | 'number' | 'boolean',
-  meta?: {
-    default: string | number | boolean,
-  },
-}
-
-type ObjectDescription = {
-  type: 'object',
-  fields: {
-    [key: string]: ObjectDescription | PrimitiveDescription,
-  },
-}
 
 export type InitialValues = string | number | boolean | null | {
   [key: string]: InitialValues,
 }
 
-export const generateInitialValues = (description: ObjectDescription | PrimitiveDescription): InitialValues => {
+const isSchemaDescription = (description: SchemaFieldDescription): description is SchemaDescription => {
+  return description.type === 'object'
+}
+
+const isSchemaFieldRefDescription = (description: SchemaFieldDescription): description is SchemaFieldRefDescription => {
+  return description.type === 'ref'
+}
+export const generateInitialValues = (description: SchemaFieldDescription): InitialValues => {
   log.debug('generateInitialValues', description)
-  if (description.type === 'object') {
+  if (isSchemaDescription(description)) {
     const { fields } = description
     return Object.keys(fields).reduce((initialValues: { [key: string]: InitialValues }, key: string) => {
       initialValues[key] = generateInitialValues(fields[key])
       return initialValues
     }, {})
+  } else if (!isSchemaFieldRefDescription(description)) {
+    return (description?.meta as Record<string, InitialValues>)?.default ?? null
   }
-  return description?.meta?.default ?? null
+  return null
 }
