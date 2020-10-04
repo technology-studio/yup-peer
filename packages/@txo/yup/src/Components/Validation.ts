@@ -23,15 +23,19 @@ export const SUPPRESS_ERROR_MESSAGE = 'suppress-error-message'
 export const stringSchema = (): StringSchema<string | null | undefined> => string().trim().nullable()
 export const requiredStringSchema = (): StringSchema<string | null> => string().trim().required().nullable()
 
-export const relationSchema = (): ObjectSchema<object & { id: string | null | undefined } | undefined> => (
+export const relationSchema = (
+  options: { idKey?: string } = {},
+): ObjectSchema<object & { [key: string]: string | null | undefined } | undefined> => (
   object().shape({
-    id: stringSchema(),
+    [options.idKey ?? 'id']: stringSchema(),
   })
 )
 
-export const requiredRelationSchema = (options: { default?: string } = {}): ObjectSchema<Shape<object | undefined, { id: string | undefined | null }>> => (
+export const requiredRelationSchema = (
+  options: { idKey?: string, default?: string } = {},
+): ObjectSchema<Shape<object | undefined, { [key: string]: string | undefined | null }>> => (
   object().requiredRelation().shape({
-    id: stringSchema().meta({ default: options.default }),
+    [options.idKey ?? 'id']: stringSchema().meta({ default: options.default }),
   })
 )
 
