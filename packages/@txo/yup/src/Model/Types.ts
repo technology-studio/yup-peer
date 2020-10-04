@@ -8,8 +8,6 @@
 
 import type { TestOptionsMessage } from 'yup'
 
-export const a = 1
-
 declare module 'yup' {
   interface ObjectSchema<T extends object | null | undefined = object | undefined, C = object> extends Schema<T, C> {
     requiredRelation: () => ObjectSchema<T>,
@@ -22,14 +20,14 @@ declare module 'yup' {
   }
 
   interface StringLocale {
-    decimal: TestOptionsMessage,
-    numbersOnly: TestOptionsMessage,
-    numeric: TestOptionsMessage,
-    phoneNumber: TestOptionsMessage,
-    equalsTo: TestOptionsMessage,
+    decimal?: TestOptionsMessage,
+    numbersOnly?: TestOptionsMessage,
+    numeric?: TestOptionsMessage,
+    phoneNumber?: TestOptionsMessage,
+    equalsTo?: TestOptionsMessage,
   }
 
   interface DateLocale {
-    required: TestOptionsMessage,
+    required?: TestOptionsMessage,
   }
 }
