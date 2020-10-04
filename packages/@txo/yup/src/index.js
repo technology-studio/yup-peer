@@ -21,6 +21,7 @@ import {
   requiredPhoneNumberSchema,
   requiredRelationSchema,
   requiredStringSchema,
+  requiredArraySchema,
   stringSchema,
   SUPPRESS_ERROR_MESSAGE,
 } from './Components/Validation'
@@ -36,6 +37,7 @@ export {
   requiredPhoneNumberSchema,
   requiredRelationSchema,
   requiredStringSchema,
+  requiredArraySchema,
   setLocale,
   stringSchema,
   SUPPRESS_ERROR_MESSAGE,

@@ -16,7 +16,7 @@ export const relationSchema = () => Yup.object().shape({
   id: stringSchema(),
 })
 export const requiredRelationSchema = (options: { default?: string } = {}) => Yup.object().requiredRelation().shape({
-  id: requiredStringSchema().meta({ default: options.default }),
+  id: stringSchema().meta({ default: options.default }),
 })
 
 export const requiredDateSchema = () => Yup.date().nullable().required()
@@ -27,3 +27,5 @@ export const requiredNumberSchema = () => Yup.string().numbersOnly().nullable().
 
 export const phoneNumberSchema = () => Yup.string().trim().phoneNumber()
 export const requiredPhoneNumberSchema = () => Yup.string().trim().phoneNumber().required()
+
+export const requiredArraySchema = () => Yup.array().required().nullable()

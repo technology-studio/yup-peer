@@ -74,6 +74,7 @@ addMethod(string, 'numbersOnly', function (
 })
 
 addMethod(object, 'requiredRelation', function (
+  idKey?: string = 'id',
   message?: Message = _localization.mixed?.required,
 ) {
   return this.test({
@@ -81,7 +82,7 @@ addMethod(object, 'requiredRelation', function (
     exclusive: false,
     message,
     test: function (value: any) {
-      return isObject(value) && typeof value.id === 'string' && value.id
+      return isObject(value) && typeof value[idKey] === 'string' && value[idKey]
     },
   })
 })
