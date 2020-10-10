@@ -34,7 +34,7 @@ export const relationSchema = (
 export const requiredRelationSchema = (
   options: { idKey?: string, default?: string } = {},
 ): ObjectSchema<Shape<object | undefined, { [key: string]: string | undefined | null }>> => (
-  object().requiredRelation().shape({
+  object().requiredRelation(options.idKey).shape({
     [options.idKey ?? 'id']: stringSchema().meta({ default: options.default }),
   })
 )
