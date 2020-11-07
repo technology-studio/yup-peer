@@ -15,7 +15,6 @@ import {
 } from 'yup'
 import AwesomePhoneNumber from 'awesome-phonenumber'
 import { Log } from '@txo/log'
-// @ts-expect-error TODO: type later
 import { isObject } from '@txo/functional'
 
 const log = new Log('App.Modules.Yup.Api.Extensions')
