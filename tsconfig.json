@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "lib": ["esnext", "dom"],
+    "noEmit": true,
     "strict": true,
     "noImplicitAny": true,
     "noImplicitThis": true,
