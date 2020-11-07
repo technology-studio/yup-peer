@@ -6,5 +6,6 @@
 
 export * from './Api/Extensions'
 export * from './Api/GenerateInitialValues'
+export * from './Api/ValuesHelper'
 export * from './Components/Validation'
 export * from './Model/Types'
