@@ -24,7 +24,7 @@
     "prepare": "yarn build"
   },
   "dependencies": {
-    "@txo/functional": "^3.1.1",
+    "@txo/functional": "^4.0.1",
     "@txo/log": "^1.0.0",
     "awesome-phonenumber": "^2.40.0"
   },
