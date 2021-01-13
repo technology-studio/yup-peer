@@ -3,7 +3,7 @@
   "version": "2.2.0",
   "description": "Technology Studio - Yup",
   "main": "lib/index.js",
-  "typings": "src/index.ts",
+  "typings": "lib/index.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/technology-studio/yup.git"
@@ -26,7 +26,7 @@
   "dependencies": {
     "@txo/functional": "^4.0.1",
     "@txo/log": "^1.0.0",
-    "awesome-phonenumber": "^2.40.0"
+    "awesome-phonenumber": "^2.43.0"
   },
   "peerDependencies": {
     "yup": "^0.29.1"

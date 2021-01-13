@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "description": "Technology Studio - Yup",
   "main": "lib/index.js",
-  "typings": "src/index.ts",
+  "typings": "lib/index.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/technology-studio/yup.git"
