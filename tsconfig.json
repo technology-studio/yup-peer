@@ -11,5 +11,5 @@
     "strictBindCallApply": true,
     "strictFunctionTypes": true,
     "sourceMap": true
-  },
+  }
 }
