@@ -12,6 +12,8 @@ import {
   setLocale as _setLocale,
   LocaleObject,
   StringSchema,
+  ObjectSchema,
+  ValidationError,
 } from 'yup'
 import AwesomePhoneNumber from 'awesome-phonenumber'
 import { Log } from '@txo/log'
@@ -87,4 +89,23 @@ addMethod<StringSchema>(object, 'requiredRelation', function (
       return false
     },
   })
+})
+
+addMethod<ObjectSchema>(object, 'atLeastOneRequired', function (
+  keys: string[],
+  message = _localization.object?.atLeastOneRequired,
+) {
+  return this.test({
+    name: 'atLeastOneRequired',
+    exclusive: false,
+    message,
+    test: function (value: unknown): boolean | ValidationError {
+      if (value && isObject(value)) {
+        const isValid = keys.some((key) => (value as Record<string, string>)[key])
+        return isValid || new ValidationError(message, value, 'atLeastOneRequired')
+      }
+      return false
+    },
+  },
+  )
 })
