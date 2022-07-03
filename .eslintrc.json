@@ -3,5 +3,17 @@
     "txo-typescript",
     "plugin:jest/recommended"
   ],
-  "parser": "@typescript-eslint/parser"
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": [
+      "./tsconfig.json",
+      "./packages/**/tsconfig.json"
+    ]
+  },
+  "plugins": [
+    "react-hooks"
+  ],
+  "rules": {
+    "react-hooks/exhaustive-deps": "error"
+  }
 }

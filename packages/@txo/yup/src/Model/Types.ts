@@ -11,6 +11,7 @@ import type { TestOptionsMessage } from 'yup'
 declare module 'yup' {
   interface ObjectSchema<T extends object | null | undefined = object | undefined, C = object> extends Schema<T, C> {
     requiredRelation: (idKey?: string) => ObjectSchema<T>,
+    atLeastOneRequired: (keys: string[]) => ObjectSchema<T>,
   }
 
   interface StringSchema<T extends string | null | undefined = string | undefined, C = object> extends Schema<T, C> {
@@ -29,5 +30,9 @@ declare module 'yup' {
 
   interface DateLocale {
     required?: TestOptionsMessage,
+  }
+
+  interface ObjectLocale {
+    atLeastOneRequired?: TestOptionsMessage,
   }
 }
