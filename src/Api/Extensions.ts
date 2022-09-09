@@ -4,15 +4,17 @@
  * @Copyright: Technology Studio
 **/
 
+import type {
+  LocaleObject,
+  StringSchema,
+  ObjectSchema,
+} from 'yup'
 import {
   addMethod,
   string,
   object,
   ref,
   setLocale as _setLocale,
-  LocaleObject,
-  StringSchema,
-  ObjectSchema,
   ValidationError,
 } from 'yup'
 import AwesomePhoneNumber from 'awesome-phonenumber'

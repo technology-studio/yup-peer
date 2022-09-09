@@ -4,24 +4,20 @@
  * @Copyright: Technology Studio
 **/
 
-import type { SchemaFieldDescription, SchemaDescription, SchemaFieldRefDescription, SchemaFieldInnerTypeDescription } from 'yup'
+import type {
+  SchemaFieldDescription, SchemaDescription, SchemaFieldRefDescription, SchemaFieldInnerTypeDescription,
+} from 'yup'
 import { isObject } from '@txo/functional'
 
 export type Values = string | number | boolean | null | {
   [key: string]: Values,
 }
 
-const isSchemaDescription = (description?: SchemaFieldDescription): description is SchemaDescription => {
-  return description?.type === 'object'
-}
+const isSchemaDescription = (description?: SchemaFieldDescription): description is SchemaDescription => description?.type === 'object'
 
-const isSchemaFieldRefDescription = (description?: SchemaFieldDescription): description is SchemaFieldRefDescription => {
-  return description?.type === 'ref'
-}
+const isSchemaFieldRefDescription = (description?: SchemaFieldDescription): description is SchemaFieldRefDescription => description?.type === 'ref'
 
-const isSchemaArrayRefDescription = (description?: SchemaFieldDescription): description is SchemaFieldInnerTypeDescription => {
-  return description?.type === 'array'
-}
+const isSchemaArrayRefDescription = (description?: SchemaFieldDescription): description is SchemaFieldInnerTypeDescription => description?.type === 'array'
 
 export const removeValuesNotPresentInSchema = (description?: SchemaFieldDescription, values?: Values): Values | undefined => {
   if (isSchemaDescription(description) && isObject(values)) {

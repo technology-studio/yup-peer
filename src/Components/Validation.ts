@@ -6,16 +6,18 @@
 
 /* eslint-disable @typescript-eslint/ban-types */
 
-import {
-  string,
-  object,
-  date,
-  array,
+import type {
   Shape,
   StringSchema,
   ObjectSchema,
   DateSchema,
   NullableArraySchema,
+} from 'yup'
+import {
+  string,
+  object,
+  date,
+  array,
 } from 'yup'
 
 export const SUPPRESS_ERROR_MESSAGE = 'suppress-error-message'
