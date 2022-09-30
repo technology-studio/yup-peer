@@ -2939,10 +2939,10 @@ escape-string-regexp@^4.0.0:
   resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-4.0.0.tgz#14ba83a5d373e3d311e5afca29cf5bfad965bf34"
   integrity sha512-TtpcNJ3XAzx3Gq8sWRzJaVajRs0uVxA2YAkdb1jm2YkPz4G6egUFAyA3n5vtEIZefPk5Wa4UXbKuS5fKkJWdgA==
 
-eslint-config-standard-with-typescript@^22.0.0:
-  version "22.0.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-standard-with-typescript/-/eslint-config-standard-with-typescript-22.0.0.tgz#5b91941797da779e17fcb3ba418e3a3ab31fdb2f"
-  integrity sha512-VA36U7UlFpwULvkdnh6MQj5GAV2Q+tT68ALLAwJP0ZuNXU2m0wX07uxX4qyLRdHgSzH4QJ73CveKBuSOYvh7vQ==
+eslint-config-standard-with-typescript@^23.0.0:
+  version "23.0.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-standard-with-typescript/-/eslint-config-standard-with-typescript-23.0.0.tgz#aa4b656740bbb2592d4cadec735d41e36245a44b"
+  integrity sha512-iaaWifImn37Z1OXbNW1es7KI+S7D408F9ys0bpaQf2temeBWlvb0Nc5qHkOgYaRb5QxTZT32GGeN1gtswASOXA==
   dependencies:
     "@typescript-eslint/parser" "^5.0.0"
     eslint-config-standard "17.0.0"
@@ -2952,12 +2952,12 @@ eslint-config-standard@17.0.0:
   resolved "https://registry.yarnpkg.com/eslint-config-standard/-/eslint-config-standard-17.0.0.tgz#fd5b6cf1dcf6ba8d29f200c461de2e19069888cf"
   integrity sha512-/2ks1GKyqSOkH7JFvXJicu0iMpoojkwB+f5Du/1SC0PtBL+s8v30k9njRZ21pm2drKYm2342jFnGWzttxPmZVg==
 
-eslint-config-txo-typescript@^3.1.11:
-  version "3.1.13"
-  resolved "https://registry.yarnpkg.com/eslint-config-txo-typescript/-/eslint-config-txo-typescript-3.1.13.tgz#977813174b22d6a2c446f2ba3d004a6aa210640e"
-  integrity sha512-tE88+WFMQrSpgNOKX1u5uIRYa44kfyRpYfYeiUWDGq++gn37d3a4TjSNExTEFilrNEEScLceZFOviJuUHroFmA==
+eslint-config-txo-typescript@^3.1.26:
+  version "3.1.26"
+  resolved "https://registry.yarnpkg.com/eslint-config-txo-typescript/-/eslint-config-txo-typescript-3.1.26.tgz#508b6f2d04d383de32e901a51177673a1a3bcd8e"
+  integrity sha512-wJK5HhsTTfBpCjMu1hPbSfFD65BQzlp1sb+vQ55GHDrjBH40BiibaEXf7tAlmFJ0dUeudsHTPA/sjgjmydsUnQ==
   dependencies:
-    eslint-config-standard-with-typescript "^22.0.0"
+    eslint-config-standard-with-typescript "^23.0.0"
     eslint-import-resolver-typescript "^3.5.1"
 
 eslint-formatter-pretty@^4.1.0:
