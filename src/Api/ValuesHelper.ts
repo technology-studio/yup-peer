@@ -5,22 +5,25 @@
 **/
 
 import type {
-  SchemaFieldDescription, SchemaDescription, SchemaFieldRefDescription, SchemaFieldInnerTypeDescription,
-} from 'yup'
+  SchemaFieldDescription,
+  SchemaObjectDescription,
+  SchemaRefDescription,
+  SchemaInnerTypeDescription,
+} from 'yup/lib/schema'
 import { isObject } from '@txo/functional'
 
 export type Values = string | number | boolean | null | {
   [key: string]: Values,
 }
 
-const isSchemaDescription = (description?: SchemaFieldDescription): description is SchemaDescription => description?.type === 'object'
+const isSchemaObjectDescription = (description?: SchemaFieldDescription): description is SchemaObjectDescription => 'fields' in (description ?? {})
 
-const isSchemaFieldRefDescription = (description?: SchemaFieldDescription): description is SchemaFieldRefDescription => description?.type === 'ref'
+const isSchemaFieldRefDescription = (description?: SchemaFieldDescription): description is SchemaRefDescription => description?.type === 'ref'
 
-const isSchemaArrayRefDescription = (description?: SchemaFieldDescription): description is SchemaFieldInnerTypeDescription => description?.type === 'array'
+const isSchemaArrayRefDescription = (description?: SchemaFieldDescription): description is SchemaInnerTypeDescription => description?.type === 'array'
 
 export const removeValuesNotPresentInSchema = (description?: SchemaFieldDescription, values?: Values): Values | undefined => {
-  if (isSchemaDescription(description) && isObject(values)) {
+  if (isSchemaObjectDescription(description) && isObject(values)) {
     const { fields } = description
     let modified = false
     const nextValues = Object.keys(values).reduce((nextValues: { [key: string]: Values }, key: string) => {

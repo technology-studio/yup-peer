@@ -6,8 +6,10 @@
 
 import { Log } from '@txo/log'
 import type {
-  SchemaFieldDescription, SchemaDescription, SchemaFieldRefDescription,
-} from 'yup'
+  SchemaFieldDescription,
+  SchemaObjectDescription,
+  SchemaRefDescription,
+} from 'yup/lib/schema'
 
 const log = new Log('app.Modules.Yup.Api.GenerateInitialValues')
 
@@ -15,12 +17,12 @@ export type InitialValues = string | number | boolean | null | {
   [key: string]: InitialValues,
 }
 
-const isSchemaDescription = (description: SchemaFieldDescription): description is SchemaDescription => description.type === 'object'
+const isSchemaObjectDescription = (description?: SchemaFieldDescription): description is SchemaObjectDescription => 'fields' in (description ?? {})
 
-const isSchemaFieldRefDescription = (description: SchemaFieldDescription): description is SchemaFieldRefDescription => description.type === 'ref'
+const isSchemaFieldRefDescription = (description: SchemaFieldDescription): description is SchemaRefDescription => description.type === 'ref'
 export const generateInitialValues = (description: SchemaFieldDescription): InitialValues => {
   log.debug('generateInitialValues', description)
-  if (isSchemaDescription(description)) {
+  if (isSchemaObjectDescription(description)) {
     const { fields } = description
     return Object.keys(fields).reduce((initialValues: { [key: string]: InitialValues }, key: string) => {
       initialValues[key] = generateInitialValues(fields[key])

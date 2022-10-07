@@ -4,35 +4,48 @@
  * @Copyright: Technology Studio
  **/
 
-/* eslint-disable @typescript-eslint/ban-types */
-
-import type { TestOptionsMessage } from 'yup'
+import type {
+  BaseSchema,
+} from 'yup'
+import type {
+  AssertsShape,
+  ObjectShape,
+  TypeOfShape,
+} from 'yup/lib/object'
+import type {
+  AnyObject,
+  Maybe,
+  Message,
+  Optionals,
+} from 'yup/lib/types'
 
 declare module 'yup' {
-  interface ObjectSchema<T extends object | null | undefined = object | undefined, C = object> extends Schema<T, C> {
-    requiredRelation: (idKey?: string) => ObjectSchema<T>,
-    atLeastOneRequired: (keys: string[]) => ObjectSchema<T>,
+  interface ObjectSchema<TShape extends ObjectShape, TContext extends AnyObject = AnyObject, TIn extends Maybe<TypeOfShape<TShape>> = TypeOfShape<TShape>, TOut extends Maybe<AssertsShape<TShape>> = AssertsShape<TShape> | Optionals<TIn>> extends BaseSchema<TIn, TContext, TOut> {
+    requiredRelation: (idKey?: string) => this,
+    atLeastOneRequired: (keys: string[]) => this,
   }
 
-  interface StringSchema<T extends string | null | undefined = string | undefined, C = object> extends Schema<T, C> {
-    numbersOnly: () => StringSchema<T, C>,
-    phoneNumber: () => StringSchema<T, C>,
-    equalsTo: () => StringSchema<T, C>,
+  interface StringSchema<TType extends Maybe<string> = string | undefined, TContext extends AnyObject = AnyObject, TOut extends TType = TType> extends BaseSchema<TType, TContext, TOut> {
+    numbersOnly: () => StringSchema<TType>,
+    phoneNumber: () => StringSchema<TType>,
+    equalsTo: () => StringSchema<TType>,
   }
+}
 
+declare module 'yup/lib/locale' {
   interface StringLocale {
-    decimal?: TestOptionsMessage,
-    numbersOnly?: TestOptionsMessage,
-    numeric?: TestOptionsMessage,
-    phoneNumber?: TestOptionsMessage,
-    equalsTo?: TestOptionsMessage,
+    decimal?: Message,
+    numbersOnly?: Message,
+    numeric?: Message,
+    phoneNumber?: Message,
+    equalsTo?: Message,
   }
 
   interface DateLocale {
-    required?: TestOptionsMessage,
+    required?: Message,
   }
 
   interface ObjectLocale {
-    atLeastOneRequired?: TestOptionsMessage,
+    atLeastOneRequired?: Message,
   }
 }

@@ -5,7 +5,6 @@
 **/
 
 import type {
-  LocaleObject,
   StringSchema,
   ObjectSchema,
 } from 'yup'
@@ -20,6 +19,10 @@ import {
 import AwesomePhoneNumber from 'awesome-phonenumber'
 import { Log } from '@txo/log'
 import { isObject } from '@txo/functional'
+import type { ObjectShape } from 'yup/lib/object'
+import type {
+  LocaleObject,
+} from 'yup/lib/locale'
 
 const log = new Log('App.Modules.Yup.Api.Extensions')
 
@@ -75,7 +78,7 @@ addMethod<StringSchema>(string, 'numbersOnly', function (
   return this.matches(/[\d]+/, message)
 })
 
-addMethod<StringSchema>(object, 'requiredRelation', function (
+addMethod<ObjectSchema<ObjectShape>>(object, 'requiredRelation', function (
   idKey = 'id',
   message = _localization.mixed?.required,
 ) {
@@ -93,7 +96,7 @@ addMethod<StringSchema>(object, 'requiredRelation', function (
   })
 })
 
-addMethod<ObjectSchema>(object, 'atLeastOneRequired', function (
+addMethod<ObjectSchema<ObjectShape>>(object, 'atLeastOneRequired', function (
   keys: string[],
   message = _localization.object?.atLeastOneRequired,
 ) {
