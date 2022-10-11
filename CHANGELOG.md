@@ -1,3 +1,25 @@
+## [4.0.0](https://github.com/technology-studio/yup/compare/v3.1.3...v4.0.0) (2022-10-11)
+
+
+### ⚠ BREAKING CHANGES
+
+* **deps:** change yup to be as peer dependency
+
+* chore(deps): update dependency yup to ^0.32.11
+
+* chore: remove yup types package
+
+* chore: fix typescript issues with newer yup version
+
+* chore: update awesome-phonenumber and fix usage
+
+Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>
+Co-authored-by: Erik Slovak <erik.slovak@technologystudio.sk>
+
+### chore
+
+* **deps:** update dependency yup to ^0.32.11 ([#36](https://github.com/technology-studio/yup/issues/36)) ([91c55dc](https://github.com/technology-studio/yup/commit/91c55dcfcd596179fe2768d9dcd98c3a0cb42b0b))
+
 ## [3.1.3](https://github.com/technology-studio/yup/compare/v3.1.2...v3.1.3) (2022-10-01)
 
 
