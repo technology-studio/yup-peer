@@ -16,7 +16,7 @@ import {
   setLocale as _setLocale,
   ValidationError,
 } from 'yup'
-import AwesomePhoneNumber from 'awesome-phonenumber'
+import { parsePhoneNumber } from 'awesome-phonenumber'
 import { Log } from '@txo/log'
 import { isObject } from '@txo/functional'
 import type { ObjectShape } from 'yup/lib/object'
@@ -61,7 +61,7 @@ addMethod<StringSchema>(string, 'phoneNumber', function (
     exclusive: false,
     message,
     test: function (value: unknown) {
-      return value == null || new AwesomePhoneNumber(value as string).isValid()
+      return value == null || parsePhoneNumber(value as string).isValid()
     },
   })
 })
