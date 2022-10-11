@@ -5,7 +5,6 @@
 **/
 
 import type {
-  LocaleObject,
   StringSchema,
   ObjectSchema,
 } from 'yup'
@@ -17,9 +16,13 @@ import {
   setLocale as _setLocale,
   ValidationError,
 } from 'yup'
-import AwesomePhoneNumber from 'awesome-phonenumber'
+import { parsePhoneNumber } from 'awesome-phonenumber'
 import { Log } from '@txo/log'
 import { isObject } from '@txo/functional'
+import type { ObjectShape } from 'yup/lib/object'
+import type {
+  LocaleObject,
+} from 'yup/lib/locale'
 
 const log = new Log('App.Modules.Yup.Api.Extensions')
 
@@ -58,7 +61,7 @@ addMethod<StringSchema>(string, 'phoneNumber', function (
     exclusive: false,
     message,
     test: function (value: unknown) {
-      return value == null || new AwesomePhoneNumber(value as string).isValid()
+      return value == null || parsePhoneNumber(value as string).isValid()
     },
   })
 })
@@ -75,7 +78,7 @@ addMethod<StringSchema>(string, 'numbersOnly', function (
   return this.matches(/[\d]+/, message)
 })
 
-addMethod<StringSchema>(object, 'requiredRelation', function (
+addMethod<ObjectSchema<ObjectShape>>(object, 'requiredRelation', function (
   idKey = 'id',
   message = _localization.mixed?.required,
 ) {
@@ -93,7 +96,7 @@ addMethod<StringSchema>(object, 'requiredRelation', function (
   })
 })
 
-addMethod<ObjectSchema>(object, 'atLeastOneRequired', function (
+addMethod<ObjectSchema<ObjectShape>>(object, 'atLeastOneRequired', function (
   keys: string[],
   message = _localization.object?.atLeastOneRequired,
 ) {

@@ -7,11 +7,11 @@
 /* eslint-disable @typescript-eslint/ban-types */
 
 import type {
-  Shape,
   StringSchema,
   ObjectSchema,
   DateSchema,
-  NullableArraySchema,
+  ArraySchema,
+  AnySchema,
 } from 'yup'
 import {
   string,
@@ -19,15 +19,16 @@ import {
   date,
   array,
 } from 'yup'
+import type { AnyObject } from 'yup/lib/types'
 
 export const SUPPRESS_ERROR_MESSAGE = 'suppress-error-message'
 
 export const stringSchema = (): StringSchema<string | null | undefined> => string().trim().nullable()
-export const requiredStringSchema = (): StringSchema<string | null> => string().trim().required().nullable()
+export const requiredStringSchema = (): StringSchema<string | null | undefined> => string().trim().required().nullable()
 
 export const relationSchema = (
   options: { idKey?: string } = {},
-): ObjectSchema<object & { [key: string]: string | null | undefined } | undefined> => (
+): ObjectSchema<{ [x: string]: StringSchema<string | null | undefined> }> => (
   object().shape({
     [options.idKey ?? 'id']: stringSchema(),
   })
@@ -35,19 +36,19 @@ export const relationSchema = (
 
 export const requiredRelationSchema = (
   options: { idKey?: string, default?: string } = {},
-): ObjectSchema<Shape<object | undefined, { [key: string]: string | undefined | null }>> => (
+): ObjectSchema<{ [x: string]: StringSchema<string | null | undefined> }> => (
   object().requiredRelation(options.idKey).shape({
     [options.idKey ?? 'id']: stringSchema().meta({ default: options.default }),
   })
 )
 
 export const dateSchema = (): DateSchema<Date | undefined | null, object> => date().nullable()
-export const requiredDateSchema = (): DateSchema<Date | null, object> => date().nullable().required()
+export const requiredDateSchema = (): DateSchema<Date | null | undefined, object> => date().nullable().required()
 
 export const numberSchema = (): StringSchema<string | null | undefined> => string().numbersOnly().nullable()
-export const requiredNumberSchema = (): StringSchema<string | null> => string().numbersOnly().nullable().required()
+export const requiredNumberSchema = (): StringSchema<string | null | undefined> => string().numbersOnly().nullable().required()
 
 export const phoneNumberSchema = (): StringSchema<string | null | undefined> => string().trim().phoneNumber()
-export const requiredPhoneNumberSchema = (): StringSchema<string | null> => string().trim().phoneNumber().required()
+export const requiredPhoneNumberSchema = (): StringSchema<string | null | undefined> => string().trim().phoneNumber().required()
 
-export const requiredArraySchema = (): NullableArraySchema<unknown, object> => array().required().nullable()
+export const requiredArraySchema = (): ArraySchema<AnySchema, AnyObject, unknown[] | null | undefined> => array().required().nullable()
