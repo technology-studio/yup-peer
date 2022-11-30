@@ -61,7 +61,7 @@ addMethod<StringSchema>(string, 'phoneNumber', function (
     exclusive: false,
     message,
     test: function (value: unknown) {
-      return value == null || parsePhoneNumber(value as string).isValid()
+      return value == null || parsePhoneNumber(value as string).valid
     },
   })
 })
