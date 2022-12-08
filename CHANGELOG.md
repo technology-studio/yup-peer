@@ -1,3 +1,10 @@
+## [4.0.3](https://github.com/technology-studio/yup/compare/v4.0.2...v4.0.3) (2022-12-08)
+
+
+### Bug fixes
+
+* **deps:** update dependency awesome-phonenumber to ^4.1.0 ([6f461cd](https://github.com/technology-studio/yup/commit/6f461cd1f91d84a86f6ce403580c688c418f161d))
+
 ## [4.0.2](https://github.com/technology-studio/yup/compare/v4.0.1...v4.0.2) (2022-11-30)
 
 
