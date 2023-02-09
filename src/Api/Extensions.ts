@@ -7,6 +7,8 @@
 import type {
   StringSchema,
   ObjectSchema,
+  ObjectShape,
+  LocaleObject,
 } from 'yup'
 import {
   addMethod,
@@ -19,10 +21,6 @@ import {
 import { parsePhoneNumber } from 'awesome-phonenumber'
 import { Log } from '@txo/log'
 import { isObject } from '@txo/functional'
-import type { ObjectShape } from 'yup/lib/object'
-import type {
-  LocaleObject,
-} from 'yup/lib/locale'
 
 const log = new Log('App.Modules.Yup.Api.Extensions')
 

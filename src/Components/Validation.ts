@@ -12,6 +12,7 @@ import type {
   DateSchema,
   ArraySchema,
   AnySchema,
+  AnyObject,
 } from 'yup'
 import {
   string,
@@ -19,7 +20,6 @@ import {
   date,
   array,
 } from 'yup'
-import type { AnyObject } from 'yup/lib/types'
 
 export const SUPPRESS_ERROR_MESSAGE = 'suppress-error-message'
 

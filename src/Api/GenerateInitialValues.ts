@@ -9,7 +9,7 @@ import type {
   SchemaFieldDescription,
   SchemaObjectDescription,
   SchemaRefDescription,
-} from 'yup/lib/schema'
+} from 'yup'
 
 const log = new Log('app.Modules.Yup.Api.GenerateInitialValues')
 

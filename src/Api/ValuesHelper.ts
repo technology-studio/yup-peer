@@ -9,7 +9,7 @@ import type {
   SchemaObjectDescription,
   SchemaRefDescription,
   SchemaInnerTypeDescription,
-} from 'yup/lib/schema'
+} from 'yup'
 import { isObject } from '@txo/functional'
 
 export type Values = string | number | boolean | null | {
