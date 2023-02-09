@@ -11,7 +11,6 @@ import type {
   ObjectSchema,
   DateSchema,
   ArraySchema,
-  AnySchema,
   AnyObject,
 } from 'yup'
 import {
@@ -28,7 +27,7 @@ export const requiredStringSchema = (): StringSchema<string | null | undefined> 
 
 export const relationSchema = (
   options: { idKey?: string } = {},
-): ObjectSchema<{ [x: string]: StringSchema<string | null | undefined> }> => (
+): ObjectSchema<{ [x: string]: string | null | undefined }> => (
   object().shape({
     [options.idKey ?? 'id']: stringSchema(),
   })
@@ -36,7 +35,7 @@ export const relationSchema = (
 
 export const requiredRelationSchema = (
   options: { idKey?: string, default?: string } = {},
-): ObjectSchema<{ [x: string]: StringSchema<string | null | undefined> }> => (
+): ObjectSchema<{ [x: string]: string | null | undefined }> => (
   object().requiredRelation(options.idKey).shape({
     [options.idKey ?? 'id']: stringSchema().meta({ default: options.default }),
   })
@@ -51,4 +50,4 @@ export const requiredNumberSchema = (): StringSchema<string | null | undefined> 
 export const phoneNumberSchema = (): StringSchema<string | null | undefined> => string().trim().phoneNumber()
 export const requiredPhoneNumberSchema = (): StringSchema<string | null | undefined> => string().trim().phoneNumber().required()
 
-export const requiredArraySchema = (): ArraySchema<AnySchema, AnyObject, unknown[] | null | undefined> => array().required().nullable()
+export const requiredArraySchema = (): ArraySchema<any[] | null | undefined, AnyObject, unknown[] | null | undefined> => array().required().nullable()
