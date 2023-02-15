@@ -28,7 +28,7 @@ export const requiredStringSchema = (): StringSchema<string | null | undefined> 
 
 export const relationSchema = (
   options: { idKey?: string } = {},
-): ObjectSchema<{ [x: string]: StringSchema<string | null | undefined> }> => (
+): ObjectSchema<Record<string, StringSchema<string | null | undefined>>> => (
   object().shape({
     [options.idKey ?? 'id']: stringSchema(),
   })
@@ -36,7 +36,7 @@ export const relationSchema = (
 
 export const requiredRelationSchema = (
   options: { idKey?: string, default?: string } = {},
-): ObjectSchema<{ [x: string]: StringSchema<string | null | undefined> }> => (
+): ObjectSchema<Record<string, StringSchema<string | null | undefined>>> => (
   object().requiredRelation(options.idKey).shape({
     [options.idKey ?? 'id']: stringSchema().meta({ default: options.default }),
   })
