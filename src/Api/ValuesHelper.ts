@@ -26,7 +26,7 @@ export const removeValuesNotPresentInSchema = (description?: SchemaFieldDescript
   if (isSchemaObjectDescription(description) && isObject(values)) {
     const { fields } = description
     let modified = false
-    const nextValues = Object.keys(values).reduce((nextValues: { [key: string]: Values }, key: string) => {
+    const nextValues = Object.keys(values).reduce((nextValues: Record<string, Values>, key: string) => {
       if (key in fields) {
         const subValues = values[key]
         const nextSubValues = removeValuesNotPresentInSchema(fields[key], subValues)
