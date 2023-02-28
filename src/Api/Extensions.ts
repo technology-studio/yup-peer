@@ -37,7 +37,6 @@ export const setLocale = (localization: LocaleObject): void => {
   _setLocale(localization)
 }
 
-// @ts-expect-error -- there's an issue with incorrect signature of schema on yup `addMethod` types - https://github.com/jquense/yup/issues/1899
 addMethod<StringSchema>(string, 'equalsTo', function (
   key: string,
   message = (_localization.string as StringLocale)?.equalsTo,
@@ -53,7 +52,6 @@ addMethod<StringSchema>(string, 'equalsTo', function (
   })
 })
 
-// @ts-expect-error -- there's an issue with incorrect signature of schema on yup `addMethod` types - https://github.com/jquense/yup/issues/1899
 addMethod<StringSchema>(string, 'phoneNumber', function (
   ref: unknown,
   message = (_localization.string as StringLocale)?.phoneNumber,
@@ -68,21 +66,18 @@ addMethod<StringSchema>(string, 'phoneNumber', function (
   })
 })
 
-// @ts-expect-error -- there's an issue with incorrect signature of schema on yup `addMethod` types - https://github.com/jquense/yup/issues/1899
 addMethod<StringSchema>(string, 'numeric', function (
   message = (_localization.string as StringLocale)?.numeric,
 ) {
   return this.matches(/[\d.,]+/, message)
 })
 
-// @ts-expect-error -- there's an issue with incorrect signature of schema on yup `addMethod` types - https://github.com/jquense/yup/issues/1899
 addMethod<StringSchema>(string, 'numbersOnly', function (
   message = (_localization.string as StringLocale)?.numbersOnly,
 ) {
   return this.matches(/[\d]+/, message)
 })
 
-// @ts-expect-error -- there's an issue with incorrect signature of schema on yup `addMethod` types - https://github.com/jquense/yup/issues/1899
 addMethod<ObjectSchema<ObjectShape>>(object, 'requiredRelation', function (
   idKey = 'id',
   message = _localization.mixed?.required,
@@ -101,7 +96,6 @@ addMethod<ObjectSchema<ObjectShape>>(object, 'requiredRelation', function (
   })
 })
 
-// @ts-expect-error -- there's an issue with incorrect signature of schema on yup `addMethod` types - https://github.com/jquense/yup/issues/1899
 addMethod<ObjectSchema<ObjectShape>>(object, 'atLeastOneRequired', function (
   keys: string[],
   message = (_localization.object as ObjectLocale)?.atLeastOneRequired,
