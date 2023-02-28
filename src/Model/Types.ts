@@ -25,6 +25,7 @@ declare module 'yup' {
   interface ObjectSchema<
     TIn extends Maybe<AnyObject>,
     TContext = AnyObject,
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     TDefault = any,
     TFlags extends Flags = '',
   > extends Schema<MakeKeysOptional<TIn>, TContext, TDefault, TFlags> {
