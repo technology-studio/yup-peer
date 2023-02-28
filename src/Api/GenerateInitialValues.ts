@@ -24,7 +24,7 @@ export const generateInitialValues = (description: SchemaFieldDescription): Init
   log.debug('generateInitialValues', description)
   if (isSchemaObjectDescription(description)) {
     const { fields } = description
-    return Object.keys(fields).reduce((initialValues: { [key: string]: InitialValues }, key: string) => {
+    return Object.keys(fields).reduce((initialValues: Record<string, InitialValues>, key: string) => {
       initialValues[key] = generateInitialValues(fields[key])
       return initialValues
     }, {})

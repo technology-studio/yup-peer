@@ -87,9 +87,9 @@ addMethod<ObjectSchema<ObjectShape>>(object, 'requiredRelation', function (
     exclusive: false,
     message,
     test: function (value: unknown): boolean {
-      if (value && isObject(value)) {
+      if ((Boolean(value)) && isObject(value)) {
         const _value = value as Record<string, string>
-        return !!(typeof _value[idKey] === 'string' && _value[idKey])
+        return !!(typeof _value[idKey] === 'string' && (_value[idKey].length > 0))
       }
       return false
     },
@@ -105,7 +105,7 @@ addMethod<ObjectSchema<ObjectShape>>(object, 'atLeastOneRequired', function (
     exclusive: false,
     message,
     test: function (value: unknown): boolean | ValidationError {
-      if (value && isObject(value)) {
+      if ((Boolean(value)) && isObject(value)) {
         const isValid = keys.some((key) => (value as Record<string, string>)[key])
         return isValid || new ValidationError(message, value, 'atLeastOneRequired')
       }
