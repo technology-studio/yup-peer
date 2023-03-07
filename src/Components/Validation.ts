@@ -12,6 +12,7 @@ import type {
   DateSchema,
   ArraySchema,
   AnySchema,
+  AnyObject,
 } from 'yup'
 import {
   string,
@@ -19,7 +20,6 @@ import {
   date,
   array,
 } from 'yup'
-import type { AnyObject } from 'yup/lib/types'
 
 export const SUPPRESS_ERROR_MESSAGE = 'suppress-error-message'
 
@@ -28,7 +28,9 @@ export const requiredStringSchema = (): StringSchema<string | null | undefined> 
 
 export const relationSchema = (
   options: { idKey?: string } = {},
+// @ts-expect-error -- NOTE: yup does not return schema, instead it returns the value of given schema
 ): ObjectSchema<Record<string, StringSchema<string | null | undefined>>> => (
+) => (
   object().shape({
     [options.idKey ?? 'id']: stringSchema(),
   })
@@ -36,6 +38,7 @@ export const relationSchema = (
 
 export const requiredRelationSchema = (
   options: { idKey?: string, default?: string } = {},
+  // @ts-expect-error -- NOTE: yup does not return schema, instead it returns the value of given schema
 ): ObjectSchema<Record<string, StringSchema<string | null | undefined>>> => (
   object().requiredRelation(options.idKey).shape({
     [options.idKey ?? 'id']: stringSchema().meta({ default: options.default }),
@@ -51,4 +54,5 @@ export const requiredNumberSchema = (): StringSchema<string | null | undefined> 
 export const phoneNumberSchema = (): StringSchema<string | null | undefined> => string().trim().phoneNumber()
 export const requiredPhoneNumberSchema = (): StringSchema<string | null | undefined> => string().trim().phoneNumber().required()
 
+// @ts-expect-error -- NOTE: yup does not return schema, instead it returns the value of given schema
 export const requiredArraySchema = (): ArraySchema<AnySchema, AnyObject, unknown[] | null | undefined> => array().required().nullable()

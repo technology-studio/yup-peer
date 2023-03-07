@@ -5,34 +5,45 @@
  **/
 
 import type {
-  BaseSchema,
-} from 'yup'
-import type {
-  AssertsShape,
-  ObjectShape,
-  TypeOfShape,
-} from 'yup/lib/object'
-import type {
+  Schema,
   AnyObject,
   Maybe,
   Message,
-  Optionals,
-} from 'yup/lib/types'
+  Flags,
+  MakePartial,
+} from 'yup'
+
+// NOTE: imported from yup/util/types.ts
+/* this seems to force TS to show the full type instead of all the wrapped generics */
+// eslint-disable-next-line @typescript-eslint/ban-types, @typescript-eslint/naming-convention
+type _<T> = T extends {} ? { [k in keyof T]: T[k] } : T
+
+// NOTE: imported from yup/object.ts
+type MakeKeysOptional<T> = T extends AnyObject ? _<MakePartial<T>> : T
 
 declare module 'yup' {
-  interface ObjectSchema<TShape extends ObjectShape, TContext extends AnyObject = AnyObject, TIn extends Maybe<TypeOfShape<TShape>> = TypeOfShape<TShape>, TOut extends Maybe<AssertsShape<TShape>> = AssertsShape<TShape> | Optionals<TIn>> extends BaseSchema<TIn, TContext, TOut> {
+  interface ObjectSchema<
+    TIn extends Maybe<AnyObject>,
+    TContext = AnyObject,
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    TDefault = any,
+    TFlags extends Flags = '',
+  > extends Schema<MakeKeysOptional<TIn>, TContext, TDefault, TFlags> {
     requiredRelation: (idKey?: string) => this,
     atLeastOneRequired: (keys: string[]) => this,
   }
 
-  interface StringSchema<TType extends Maybe<string> = string | undefined, TContext extends AnyObject = AnyObject, TOut extends TType = TType> extends BaseSchema<TType, TContext, TOut> {
+  interface StringSchema<
+    TType extends Maybe<string> = string | undefined,
+    TContext = AnyObject,
+    TDefault = undefined,
+    TFlags extends Flags = '',
+  > extends Schema<TType, TContext, TDefault, TFlags> {
     numbersOnly: () => StringSchema<TType>,
     phoneNumber: () => StringSchema<TType>,
     equalsTo: () => StringSchema<TType>,
   }
-}
 
-declare module 'yup/lib/locale' {
   interface StringLocale {
     decimal?: Message,
     numbersOnly?: Message,

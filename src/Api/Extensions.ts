@@ -7,6 +7,10 @@
 import type {
   StringSchema,
   ObjectSchema,
+  ObjectShape,
+  LocaleObject,
+  StringLocale,
+  ObjectLocale,
 } from 'yup'
 import {
   addMethod,
@@ -19,10 +23,6 @@ import {
 import { parsePhoneNumber } from 'awesome-phonenumber'
 import { Log } from '@txo/log'
 import { isObject } from '@txo/functional'
-import type { ObjectShape } from 'yup/lib/object'
-import type {
-  LocaleObject,
-} from 'yup/lib/locale'
 
 const log = new Log('App.Modules.Yup.Api.Extensions')
 
@@ -39,7 +39,7 @@ export const setLocale = (localization: LocaleObject): void => {
 
 addMethod<StringSchema>(string, 'equalsTo', function (
   key: string,
-  message = _localization.string?.equalsTo,
+  message = (_localization.string as StringLocale)?.equalsTo,
 ) {
   log.debug('equalsTo', { key, message })
   return this.test({
@@ -54,7 +54,7 @@ addMethod<StringSchema>(string, 'equalsTo', function (
 
 addMethod<StringSchema>(string, 'phoneNumber', function (
   ref: unknown,
-  message = _localization.string?.phoneNumber,
+  message = (_localization.string as StringLocale)?.phoneNumber,
 ) {
   return this.test({
     name: 'phoneNumber',
@@ -67,13 +67,13 @@ addMethod<StringSchema>(string, 'phoneNumber', function (
 })
 
 addMethod<StringSchema>(string, 'numeric', function (
-  message = _localization.string?.numeric,
+  message = (_localization.string as StringLocale)?.numeric,
 ) {
   return this.matches(/[\d.,]+/, message)
 })
 
 addMethod<StringSchema>(string, 'numbersOnly', function (
-  message = _localization.string?.numbersOnly,
+  message = (_localization.string as StringLocale)?.numbersOnly,
 ) {
   return this.matches(/[\d]+/, message)
 })
@@ -98,7 +98,7 @@ addMethod<ObjectSchema<ObjectShape>>(object, 'requiredRelation', function (
 
 addMethod<ObjectSchema<ObjectShape>>(object, 'atLeastOneRequired', function (
   keys: string[],
-  message = _localization.object?.atLeastOneRequired,
+  message = (_localization.object as ObjectLocale)?.atLeastOneRequired,
 ) {
   return this.test({
     name: 'atLeastOneRequired',
