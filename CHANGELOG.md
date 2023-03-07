@@ -1,3 +1,10 @@
+## [4.0.11](https://github.com/technology-studio/yup/compare/v4.0.10...v4.0.11) (2023-03-07)
+
+
+### Bug fixes
+
+* **deps:** update dependency yup to v1 ([#183](https://github.com/technology-studio/yup/issues/183)) ([3c2df68](https://github.com/technology-studio/yup/commit/3c2df68a1e6b387e3f513d03fa49da8e50a8af62))
+
 ## [4.0.10](https://github.com/technology-studio/yup/compare/v4.0.9...v4.0.10) (2023-03-02)
 
 
