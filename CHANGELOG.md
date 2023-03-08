@@ -1,3 +1,10 @@
+## [4.0.13](https://github.com/technology-studio/yup/compare/v4.0.12...v4.0.13) (2023-03-08)
+
+
+### Bug fixes
+
+* **deps:** update dependency @txo/functional to ^4.6.0 ([6f6016e](https://github.com/technology-studio/yup/commit/6f6016e6fe4f477530b2dfbcf3a3adc763b06929))
+
 ## [4.0.12](https://github.com/technology-studio/yup/compare/v4.0.11...v4.0.12) (2023-03-07)
 
 
