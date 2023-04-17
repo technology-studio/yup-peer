@@ -1992,10 +1992,10 @@ at-least-node@^1.0.0:
   resolved "https://registry.yarnpkg.com/at-least-node/-/at-least-node-1.0.0.tgz#602cd4b46e844ad4effc92a8011a3c46e0238dc2"
   integrity sha512-+q/t7Ekv1EDY2l6Gda6LLiX14rU9TV20Wa3ofeQmwPFZbOMo9DXrLbOjFaaclkXKWidIaopwAObQDqwWtGUjqg==
 
-awesome-phonenumber@^5.3.1:
-  version "5.3.1"
-  resolved "https://registry.yarnpkg.com/awesome-phonenumber/-/awesome-phonenumber-5.3.1.tgz#a4ca8d2c590043fa69683a12bcb56ae7d950eff3"
-  integrity sha512-YispSnh1DOm5mokydrZLNzFHjOgz/wnbSFmTYzjxZJt4IW9Nf/ntdGkRCY1X704qHLDLf+5oUmye5VI4DTV5YA==
+awesome-phonenumber@^5.4.0:
+  version "5.4.0"
+  resolved "https://registry.yarnpkg.com/awesome-phonenumber/-/awesome-phonenumber-5.4.0.tgz#f535a6c3a5bb12db881605ef8cfdda3bda8302dc"
+  integrity sha512-jf6E+GHKRIMobCKygQhZ9kHmdxZ8hvXUlVhLyesP/k8JVpmWAyNa5TzWDS0hKe480tmT419yRtGLmTpD0k8pUQ==
 
 babel-jest@^29.5.0:
   version "29.5.0"
