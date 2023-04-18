@@ -39,7 +39,7 @@
     "awesome-phonenumber": "^5.4.0"
   },
   "peerDependencies": {
-    "yup": "^1.0.2"
+    "yup": "^1.1.1"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.6.1",
@@ -71,7 +71,7 @@
     "semantic-release-slack-bot": "^4.0.1",
     "ts-jest": "^29.1.0",
     "typescript": "^5.0.4",
-    "yup": "^1.0.2"
+    "yup": "^1.1.1"
   },
   "config": {
     "commitizen": {
