@@ -47,7 +47,14 @@ export const removeValuesNotPresentInSchema = (description?: SchemaFieldDescript
     if (Array.isArray(values)) {
       let modified = false
       const nextValues = values.reduce((nextValues: Values[], subValues: Values) => {
-        const nextSubValues = removeValuesNotPresentInSchema(description.innerType, subValues)
+        let nextSubValues: Values | undefined = subValues
+        if (Array.isArray(description.innerType)) {
+          description.innerType.forEach((innerType) => {
+            nextSubValues = removeValuesNotPresentInSchema(innerType, nextSubValues)
+          })
+        } else {
+          nextSubValues = removeValuesNotPresentInSchema(description.innerType, nextSubValues)
+        }
 
         if (nextSubValues !== undefined) {
           if (nextSubValues !== subValues) {
