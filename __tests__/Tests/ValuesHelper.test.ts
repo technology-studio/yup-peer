@@ -91,3 +91,21 @@ test('should remove values not present in tuple schema', () => {
     true,
   ])
 })
+
+test('should remove values with tuple schema of object schemas', () => {
+  const validationSchema = Yup.tuple([
+    Yup.object().shape({ a: Yup.string().nullable().required() }),
+    Yup.object().shape({ b: Yup.number().nullable().required() }),
+  ])
+  const values = [
+    { a: 'valueA' },
+    { b: 1, c: 'valueC' },
+  ]
+
+  const nextValues = removeValuesNotPresentInSchema(validationSchema.describe(), values)
+
+  expect(nextValues).toEqual([
+    { a: 'valueA' },
+    { b: 1 },
+  ])
+})
