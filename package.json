@@ -1,6 +1,6 @@
 {
   "name": "@txo/yup",
-  "version": "4.0.16",
+  "version": "4.0.17",
   "description": "Technology Studio - Yup",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
@@ -36,7 +36,7 @@
   "dependencies": {
     "@txo/functional": "^4.6.0",
     "@txo/log": "^2.0.1",
-    "awesome-phonenumber": "^5.4.0"
+    "awesome-phonenumber": "^5.5.0"
   },
   "peerDependencies": {
     "yup": "^1.1.1"
@@ -48,7 +48,7 @@
     "@semantic-release/git": "^10.0.1",
     "@txo-peer-dep/log": "^4.0.0",
     "@txo/log-console": "^3.0.0",
-    "@types/jest": "^29.5.0",
+    "@types/jest": "^29.5.1",
     "@typescript-eslint/eslint-plugin": "^5.59.0",
     "@typescript-eslint/parser": "^5.59.0",
     "commitizen": "^4.3.0",
