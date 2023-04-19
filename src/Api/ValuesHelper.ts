@@ -12,15 +12,17 @@ import type {
 } from 'yup'
 import { isObject } from '@txo/functional'
 
-export type Values = string | number | boolean | null | {
+export type Values = string | number | boolean | null | undefined | {
   [key: string]: Values,
-}
+} | Values[]
 
 const isSchemaObjectDescription = (description?: SchemaFieldDescription): description is SchemaObjectDescription => 'fields' in (description ?? {})
 
 const isSchemaFieldRefDescription = (description?: SchemaFieldDescription): description is SchemaRefDescription => description?.type === 'ref'
 
 const isSchemaArrayRefDescription = (description?: SchemaFieldDescription): description is SchemaInnerTypeDescription => description?.type === 'array'
+
+const isSchemaTupleRefDescription = (description?: SchemaFieldDescription): description is SchemaInnerTypeDescription => description?.type === 'tuple'
 
 export const removeValuesNotPresentInSchema = (description?: SchemaFieldDescription, values?: Values): Values | undefined => {
   if (isSchemaObjectDescription(description) && isObject(values)) {
@@ -47,16 +49,34 @@ export const removeValuesNotPresentInSchema = (description?: SchemaFieldDescript
     if (Array.isArray(values)) {
       let modified = false
       const nextValues = values.reduce((nextValues: Values[], subValues: Values) => {
-        const nextSubValues = removeValuesNotPresentInSchema(description.innerType, subValues)
+        const nextSubValues = removeValuesNotPresentInSchema(description.innerType as SchemaInnerTypeDescription, subValues)
 
-        if (nextSubValues !== undefined) {
-          if (nextSubValues !== subValues) {
+        if (nextSubValues !== subValues) {
+          modified = true
+        }
+        nextValues.push(nextSubValues)
+        return nextValues
+      }, [])
+      return modified ? nextValues : values
+    }
+  } else if (isSchemaTupleRefDescription(description)) {
+    if (Array.isArray(values)) {
+      let modified = false
+      const nextValues = values.reduce((nextValues: Values[], subValues: Values, index: number): Values[] => {
+        const innerTypeList = description.innerType as SchemaFieldDescription[]
+        const subInnerType = innerTypeList[index]
+        if (index < innerTypeList.length) {
+          const nextValue = removeValuesNotPresentInSchema(subInnerType, subValues)
+          nextValues.push(nextValue)
+          if (nextValue !== subValues) {
             modified = true
           }
-          nextValues.push(nextSubValues)
+        } else {
+          modified = true
         }
         return nextValues
       }, [])
+
       return modified ? nextValues : values
     }
   } else if (!isSchemaFieldRefDescription(description)) {
