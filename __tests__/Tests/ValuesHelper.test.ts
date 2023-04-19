@@ -27,21 +27,67 @@ test('should remove values not present in schema', () => {
   })
 })
 
+test('should return same values reference with matching array schema of object schemas', () => {
+  const validationSchema = Yup.array().of(
+    Yup.object().shape({ a: Yup.string().nullable().required() }),
+  )
+  const values = [
+    { a: 'valueA' },
+    undefined,
+    null,
+    { a: 'valueD' },
+  ]
+
+  const nextValues = removeValuesNotPresentInSchema(validationSchema.describe(), values)
+
+  expect(nextValues).toEqual([
+    { a: 'valueA' },
+    undefined,
+    null,
+    { a: 'valueD' },
+  ])
+  expect(nextValues).toBe(values)
+})
+
+test('should not remove nillable values in cleaned array with array schema of object schemas', () => {
+  const validationSchema = Yup.array().of(
+    Yup.object().shape({ a: Yup.string().nullable().required() }),
+  )
+  const values = [
+    { a: 'valueA' },
+    undefined,
+    null,
+    { a: 'valueD', b: 'valueE' },
+  ]
+
+  const nextValues = removeValuesNotPresentInSchema(validationSchema.describe(), values)
+
+  expect(nextValues).toEqual([
+    { a: 'valueA' },
+    undefined,
+    null,
+    { a: 'valueD' },
+  ])
+})
+
 test('should remove values not present in tuple schema', () => {
   const tupleValidationSchema = Yup.tuple([
     Yup.string().nullable().required(),
     Yup.number().nullable().required(),
+    Yup.boolean().nullable().required(),
   ])
   const values = [
     'valueA',
     2,
-    'valueC',
-  ] as [string, number, string]
+    true,
+    'valueB',
+  ] as [string, number, boolean, string]
 
   const nextValues = removeValuesNotPresentInSchema(tupleValidationSchema.describe(), values)
 
   expect(nextValues).toEqual([
     'valueA',
     2,
+    true,
   ])
 })
