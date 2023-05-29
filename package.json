@@ -36,7 +36,7 @@
   "dependencies": {
     "@txo/functional": "^4.6.0",
     "@txo/log": "^2.0.1",
-    "awesome-phonenumber": "^5.5.0"
+    "awesome-phonenumber": "^5.6.0"
   },
   "peerDependencies": {
     "yup": "^1.1.1"
