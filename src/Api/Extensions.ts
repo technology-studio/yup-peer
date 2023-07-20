@@ -11,6 +11,7 @@ import type {
   LocaleObject,
   StringLocale,
   ObjectLocale,
+  Message,
 } from 'yup'
 import {
   addMethod,
@@ -39,7 +40,7 @@ export const setLocale = (localization: LocaleObject): void => {
 
 addMethod<StringSchema>(string, 'equalsTo', function (
   key: string,
-  message = (_localization.string as StringLocale)?.equalsTo,
+  message: Message | undefined = (_localization.string as StringLocale)?.equalsTo,
 ) {
   log.debug('equalsTo', { key, message })
   return this.test({
@@ -54,7 +55,7 @@ addMethod<StringSchema>(string, 'equalsTo', function (
 
 addMethod<StringSchema>(string, 'phoneNumber', function (
   ref: unknown,
-  message = (_localization.string as StringLocale)?.phoneNumber,
+  message: Message | undefined = (_localization.string as StringLocale)?.phoneNumber,
 ) {
   return this.test({
     name: 'phoneNumber',
@@ -67,20 +68,20 @@ addMethod<StringSchema>(string, 'phoneNumber', function (
 })
 
 addMethod<StringSchema>(string, 'numeric', function (
-  message = (_localization.string as StringLocale)?.numeric,
+  message: Message | undefined = (_localization.string as StringLocale)?.numeric,
 ) {
   return this.matches(/[\d.,]+/, message)
 })
 
 addMethod<StringSchema>(string, 'numbersOnly', function (
-  message = (_localization.string as StringLocale)?.numbersOnly,
+  message: Message | undefined = (_localization.string as StringLocale)?.numbersOnly,
 ) {
   return this.matches(/[\d]+/, message)
 })
 
 addMethod<ObjectSchema<ObjectShape>>(object, 'requiredRelation', function (
-  idKey = 'id',
-  message = _localization.mixed?.required,
+  idKey: string | undefined = 'id',
+  message: Message | undefined = _localization.mixed?.required,
 ) {
   return this.test({
     name: 'requiredRelation',
@@ -98,7 +99,7 @@ addMethod<ObjectSchema<ObjectShape>>(object, 'requiredRelation', function (
 
 addMethod<ObjectSchema<ObjectShape>>(object, 'atLeastOneRequired', function (
   keys: string[],
-  message = (_localization.object as ObjectLocale)?.atLeastOneRequired,
+  message: Message | undefined = (_localization.object as ObjectLocale)?.atLeastOneRequired,
 ) {
   return this.test({
     name: 'atLeastOneRequired',
@@ -107,7 +108,7 @@ addMethod<ObjectSchema<ObjectShape>>(object, 'atLeastOneRequired', function (
     test: function (value: unknown): boolean | ValidationError {
       if ((Boolean(value)) && isObject(value)) {
         const isValid = keys.some((key) => (value as Record<string, string>)[key])
-        return isValid || new ValidationError(message, value, 'atLeastOneRequired')
+        return isValid || new ValidationError(message as string, value, 'atLeastOneRequired')
       }
       return false
     },
