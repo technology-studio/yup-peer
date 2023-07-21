@@ -1,3 +1,10 @@
+## [4.0.28](https://github.com/technology-studio/yup/compare/v4.0.27...v4.0.28) (2023-07-21)
+
+
+### Bug fixes
+
+* **deps:** update dependency @txo/log to ^2.0.4 ([707709f](https://github.com/technology-studio/yup/commit/707709f117be02ea4fc3ea183b27936c687d1342))
+
 ## [4.0.27](https://github.com/technology-studio/yup/compare/v4.0.26...v4.0.27) (2023-07-21)
 
 
