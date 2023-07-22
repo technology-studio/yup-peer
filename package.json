@@ -34,7 +34,7 @@
     "update-boilerplate-version": "./scripts/update-boilerplate-version.sh"
   },
   "dependencies": {
-    "@txo/functional": "^4.6.5",
+    "@txo/functional": "^4.6.6",
     "@txo/log": "^2.0.6",
     "awesome-phonenumber": "^5.10.0"
   },
