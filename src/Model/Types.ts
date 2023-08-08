@@ -1,8 +1,9 @@
 /**
+ * @Author: Rostislav Simonik <rostislav.simonik@technologystudio.sk>
  * @Author: Erik Slovak <erik.slovak@technologystudio.sk>
- * @Date: 2023-08-04T19:08:91+02:00
+ * @Date: 2020-10-04T15:10:83+02:00
  * @Copyright: Technology Studio
-**/
+ **/
 
 import type {
   Schema,
