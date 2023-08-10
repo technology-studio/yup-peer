@@ -1,3 +1,10 @@
+## [4.0.44](https://github.com/technology-studio/yup/compare/v4.0.43...v4.0.44) (2023-08-10)
+
+
+### Bug fixes
+
+* move yup module augmentation to index ([#353](https://github.com/technology-studio/yup/issues/353)) ([8418e52](https://github.com/technology-studio/yup/commit/8418e526bb3237946b7879f41f7fa79ffdf89c96))
+
 ## [4.0.43](https://github.com/technology-studio/yup/compare/v4.0.42...v4.0.43) (2023-07-30)
 
 
