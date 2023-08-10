@@ -1,5 +1,6 @@
 /**
  * @Author: Rostislav Simonik <rostislav.simonik@technologystudio.sk>
+ * @Author: Erik Slovak <erik.slovak@technologystudio.sk>
  * @Date: 2020-10-04T15:10:83+02:00
  * @Copyright: Technology Studio
  **/
