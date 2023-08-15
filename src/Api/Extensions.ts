@@ -8,7 +8,6 @@ import type {
   StringSchema,
   ObjectSchema,
   ObjectShape,
-  LocaleObject,
   StringLocale,
   ObjectLocale,
   Message,
@@ -24,6 +23,8 @@ import {
 import { parsePhoneNumber } from 'awesome-phonenumber'
 import { Log } from '@txo/log'
 import { isObject } from '@txo/types'
+
+import { type LocaleObject } from '../Model/Types'
 
 const log = new Log('App.Modules.Yup.Api.Extensions')
 

@@ -12,6 +12,7 @@ import type {
   Message,
   Flags,
   MakePartial,
+  setLocale,
 } from 'yup'
 
 // NOTE: imported from yup/util/types.ts
@@ -40,7 +41,9 @@ declare module 'yup' {
     TDefault = undefined,
     TFlags extends Flags = '',
   > extends Schema<TType, TContext, TDefault, TFlags> {
+    decimal: () => StringSchema<TType>,
     numbersOnly: () => StringSchema<TType>,
+    numeric: () => StringSchema<TType>,
     phoneNumber: () => StringSchema<TType>,
     equalsTo: () => StringSchema<TType>,
   }
@@ -60,4 +63,28 @@ declare module 'yup' {
   interface ObjectLocale {
     atLeastOneRequired?: Message,
   }
+}
+
+export type YupLocaleObject = Parameters<typeof setLocale>[0]
+
+export type StringLocale = YupLocaleObject['string'] & {
+  decimal?: Message,
+  numbersOnly?: Message,
+  numeric?: Message,
+  phoneNumber?: Message,
+  equalsTo?: Message,
+}
+
+export type DateLocale = YupLocaleObject['date'] & {
+  required?: Message,
+}
+
+export type ObjectLocale = YupLocaleObject['object'] & {
+  atLeastOneRequired?: Message,
+}
+
+export type LocaleObject = YupLocaleObject & {
+  date?: DateLocale,
+  string?: StringLocale,
+  object?: ObjectLocale,
 }
