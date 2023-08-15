@@ -23,7 +23,7 @@ import {
 } from 'yup'
 import { parsePhoneNumber } from 'awesome-phonenumber'
 import { Log } from '@txo/log'
-import { isObject } from '@txo/functional'
+import { isObject } from '@txo/types'
 
 const log = new Log('App.Modules.Yup.Api.Extensions')
 
