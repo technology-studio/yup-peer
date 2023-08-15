@@ -10,7 +10,7 @@ import type {
   SchemaRefDescription,
   SchemaInnerTypeDescription,
 } from 'yup'
-import { isObject } from '@txo/functional'
+import { isObject } from '@txo/types'
 
 export type Values = string | number | boolean | null | undefined | {
   [key: string]: Values,
