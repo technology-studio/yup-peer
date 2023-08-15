@@ -1,3 +1,10 @@
+## [4.0.46](https://github.com/technology-studio/yup/compare/v4.0.45...v4.0.46) (2023-08-15)
+
+
+### Bug fixes
+
+* create custom Locale types ([#366](https://github.com/technology-studio/yup/issues/366)) ([2a94309](https://github.com/technology-studio/yup/commit/2a943093c9c96b464e0a224d7e76974e556201aa))
+
 ## [4.0.45](https://github.com/technology-studio/yup/compare/v4.0.44...v4.0.45) (2023-08-10)
 
 
