@@ -1,3 +1,10 @@
+## [4.0.47](https://github.com/technology-studio/yup-peer/compare/v4.0.46...v4.0.47) (2023-08-22)
+
+
+### Bug fixes
+
+* migrate package to peer ([#368](https://github.com/technology-studio/yup-peer/issues/368)) ([781c330](https://github.com/technology-studio/yup-peer/commit/781c330eb44dca621b917f02ea4023c2ea8d17d9))
+
 ## [4.0.46](https://github.com/technology-studio/yup/compare/v4.0.45...v4.0.46) (2023-08-15)
 
 
