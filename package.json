@@ -1,12 +1,12 @@
 {
-  "name": "@txo/yup",
+  "name": "@txo-peer-dep/yup",
   "version": "4.0.46",
-  "description": "Technology Studio - Yup",
+  "description": "Technology Studio - Yup peer",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/technology-studio/yup.git"
+    "url": "https://github.com/technology-studio/yup-peer.git"
   },
   "author": {
     "name": "Technology Studio",
