@@ -1,3 +1,10 @@
+## [4.0.48](https://github.com/technology-studio/yup-peer/compare/v4.0.47...v4.0.48) (2023-09-02)
+
+
+### Bug fixes
+
+* **deps:** update dependency @txo/types to ^1.7.0 ([94407db](https://github.com/technology-studio/yup-peer/commit/94407db4e07205f972fe1f3e27e707124ba442e7))
+
 ## [4.0.47](https://github.com/technology-studio/yup-peer/compare/v4.0.46...v4.0.47) (2023-08-22)
 
 
