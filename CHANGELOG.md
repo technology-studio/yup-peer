@@ -1,3 +1,10 @@
+## [4.0.52](https://github.com/technology-studio/yup-peer/compare/v4.0.51...v4.0.52) (2023-09-26)
+
+
+### Bug fixes
+
+* **deps:** update dependency yup to ^1.3.1 ([8af9fec](https://github.com/technology-studio/yup-peer/commit/8af9fecd111820065250f615db02c3f7832d5543))
+
 ## [4.0.51](https://github.com/technology-studio/yup-peer/compare/v4.0.50...v4.0.51) (2023-09-24)
 
 
