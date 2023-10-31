@@ -2204,10 +2204,10 @@ available-typed-arrays@^1.0.5:
   resolved "https://registry.yarnpkg.com/available-typed-arrays/-/available-typed-arrays-1.0.5.tgz#92f95616501069d07d10edb2fc37d3e1c65123b7"
   integrity sha512-DMD0KiN46eipeziST1LPP/STfDU0sufISXmjSgvVsoU2tqxctQeASejWcfNtxYKqETM1UxQ8sp2OrSBWpHY6sw==
 
-awesome-phonenumber@^6.1.0:
-  version "6.1.0"
-  resolved "https://registry.yarnpkg.com/awesome-phonenumber/-/awesome-phonenumber-6.1.0.tgz#6be3735903c8b32d7279fd641b27de66627bfbd9"
-  integrity sha512-cYv2GNf6JHIn7hMD7EMMh4VDwJDu/ej6J061id0cJW1INTUc+2/N7rDWNAJxxmPf6ZnEJwPzLCvDylpPoIMStQ==
+awesome-phonenumber@^6.2.0:
+  version "6.2.0"
+  resolved "https://registry.yarnpkg.com/awesome-phonenumber/-/awesome-phonenumber-6.2.0.tgz#f69c3fea06d92c928883960a03cea958c8a81441"
+  integrity sha512-JSFTjZhWxKHUWAOQU+oBJ86Xf89vJpF82w6iuE9lEybeQzYKFs+zVKjOwzevFBfLjiXf72DsWESA+daVUBrhHw==
 
 babel-jest@^29.7.0:
   version "29.7.0"
