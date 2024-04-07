@@ -1937,10 +1937,10 @@ available-typed-arrays@^1.0.5:
   resolved "https://registry.yarnpkg.com/available-typed-arrays/-/available-typed-arrays-1.0.5.tgz#92f95616501069d07d10edb2fc37d3e1c65123b7"
   integrity sha512-DMD0KiN46eipeziST1LPP/STfDU0sufISXmjSgvVsoU2tqxctQeASejWcfNtxYKqETM1UxQ8sp2OrSBWpHY6sw==
 
-awesome-phonenumber@^6.6.0:
-  version "6.6.0"
-  resolved "https://registry.yarnpkg.com/awesome-phonenumber/-/awesome-phonenumber-6.6.0.tgz#97c63129f9c005abc550c4ae97aac6e8a617acaf"
-  integrity sha512-DraR/dfZW4IGLJmYvB5G81kkUDvTrWnEnkcuG12E/qrbrYakA0k0jiD6gIKffHj+HtTKU/ViQKQAqPNo0heLAw==
+awesome-phonenumber@^6.7.0:
+  version "6.7.0"
+  resolved "https://registry.yarnpkg.com/awesome-phonenumber/-/awesome-phonenumber-6.7.0.tgz#cd0f2e939bbf215e521f21398fef2619f4292189"
+  integrity sha512-tPfaQkqLf6sgmc9LxUjIBObaVfxl1IOKvfXVIrQxcK0RI1qz18pBJqDQoXmH8K9/DLNivrWS73r4L8NchBMnHQ==
 
 babel-jest@^29.7.0:
   version "29.7.0"
