@@ -1,3 +1,10 @@
+## [4.0.64](https://github.com/technology-studio/yup-peer/compare/v4.0.63...v4.0.64) (2024-04-09)
+
+
+### Bug fixes
+
+* **deps:** update dependency @txo/log to ^2.0.15 ([a76900d](https://github.com/technology-studio/yup-peer/commit/a76900d165e5d6151d1cdf0c910c2d94706dac37))
+
 ## [4.0.63](https://github.com/technology-studio/yup-peer/compare/v4.0.62...v4.0.63) (2024-04-07)
 
 
