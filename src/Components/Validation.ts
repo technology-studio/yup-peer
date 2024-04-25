@@ -28,9 +28,8 @@ export const requiredStringSchema = (): StringSchema<string | null | undefined> 
 
 export const relationSchema = (
   options: { idKey?: string } = {},
-// @ts-expect-error -- NOTE: yup does not return schema, instead it returns the value of given schema
-): ObjectSchema<Record<string, StringSchema<string | null | undefined>>> => (
 ) => (
+): ObjectSchema<Record<string, string | null | undefined>, AnyObject, Record<string, undefined>, ''> => (
   object().shape({
     [options.idKey ?? 'id']: stringSchema(),
   })
@@ -38,8 +37,7 @@ export const relationSchema = (
 
 export const requiredRelationSchema = (
   options: { idKey?: string, default?: string } = {},
-  // @ts-expect-error -- NOTE: yup does not return schema, instead it returns the value of given schema
-): ObjectSchema<Record<string, StringSchema<string | null | undefined>>> => (
+): ObjectSchema<Record<string, string | null | undefined>, AnyObject, Record<string, undefined>, ''> => (
   object().requiredRelation(options.idKey).shape({
     [options.idKey ?? 'id']: stringSchema().meta({ default: options.default }),
   })
