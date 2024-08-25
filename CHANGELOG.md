@@ -1,3 +1,15 @@
+## [4.0.69](https://github.com/technology-studio/yup-peer/compare/v4.0.68...v4.0.69) (2024-08-25)
+
+
+### CI
+
+* add lint command for CI ([#584](https://github.com/technology-studio/yup-peer/issues/584)) ([ecacf38](https://github.com/technology-studio/yup-peer/commit/ecacf3861e4ceca400802cecdddc1343f9d4f314))
+
+
+### Bug fixes
+
+* **deps:** update dependency awesome-phonenumber to ^6.12.0 ([9367c5a](https://github.com/technology-studio/yup-peer/commit/9367c5ac9ae6555550d9fd037375622164d7582a))
+
 ## [4.0.68](https://github.com/technology-studio/yup-peer/compare/v4.0.67...v4.0.68) (2024-07-02)
 
 
