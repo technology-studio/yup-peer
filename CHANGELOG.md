@@ -1,3 +1,16 @@
+## [4.0.70](https://github.com/technology-studio/yup-peer/compare/v4.0.69...v4.0.70) (2024-09-19)
+
+
+### CI
+
+* rename workflows ([#594](https://github.com/technology-studio/yup-peer/issues/594)) ([211a699](https://github.com/technology-studio/yup-peer/commit/211a6993f722b52f550d6d7db02305bc638cb9d0))
+* update URL for code-quality ([#591](https://github.com/technology-studio/yup-peer/issues/591)) ([d23d612](https://github.com/technology-studio/yup-peer/commit/d23d6121de59da0c5f2ffbd54c6e215d45396a8c))
+
+
+### Bug fixes
+
+* **deps:** update dependency awesome-phonenumber to v7 ([#590](https://github.com/technology-studio/yup-peer/issues/590)) ([ef0356b](https://github.com/technology-studio/yup-peer/commit/ef0356b6f9c2c7bb2668f193d6f6f705040f19b8))
+
 ## [4.0.69](https://github.com/technology-studio/yup-peer/compare/v4.0.68...v4.0.69) (2024-08-25)
 
 
