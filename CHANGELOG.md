@@ -1,3 +1,16 @@
+## [4.0.73](https://github.com/technology-studio/yup-peer/compare/v4.0.72...v4.0.73) (2024-12-04)
+
+
+### CI
+
+* add synchronize to PR workflow ([#612](https://github.com/technology-studio/yup-peer/issues/612)) ([ae5824a](https://github.com/technology-studio/yup-peer/commit/ae5824a5ce26044675c091b5b85779e432bd816f))
+* update pr and release workflows ([#609](https://github.com/technology-studio/yup-peer/issues/609)) ([2e9c77b](https://github.com/technology-studio/yup-peer/commit/2e9c77bed6e82ba504306caa251ff1da38995688))
+
+
+### Bug fixes
+
+* **deps:** update dependency yup to ^1.5.0 ([#618](https://github.com/technology-studio/yup-peer/issues/618)) ([94b6a61](https://github.com/technology-studio/yup-peer/commit/94b6a6144dec928db7e8d186ad07b5607e8d295e))
+
 ## [4.0.72](https://github.com/technology-studio/yup-peer/compare/v4.0.71...v4.0.72) (2024-10-02)
 
 
