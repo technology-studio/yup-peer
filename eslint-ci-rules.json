@@ -1,0 +1,12 @@
+[
+  "@typescript-eslint/no-magic-numbers",
+  "@typescript-eslint/no-import-type-side-effects",
+  "@typescript-eslint/no-unsafe-type-assertion",
+  "@typescript-eslint/no-unnecessary-condition",
+  "@stylistic/arrow-parens",
+  "complexity",
+  "@typescript-eslint/prefer-destructuring",
+  "eslint-comments/require-description",
+  "@typescript-eslint/ban-types",
+  "@typescript-eslint/no-empty-object-type"
+]
