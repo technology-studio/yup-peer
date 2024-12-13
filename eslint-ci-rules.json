@@ -7,6 +7,5 @@
   "complexity",
   "@typescript-eslint/prefer-destructuring",
   "eslint-comments/require-description",
-  "@typescript-eslint/ban-types",
   "@typescript-eslint/no-empty-object-type"
 ]
