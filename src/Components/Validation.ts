@@ -4,8 +4,6 @@
  * @Copyright: Technology Studio
  **/
 
-/* eslint-disable @typescript-eslint/ban-types */
-
 import type {
   StringSchema,
   ObjectSchema,

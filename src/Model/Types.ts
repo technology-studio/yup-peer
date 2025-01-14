@@ -16,8 +16,7 @@ import type {
 } from 'yup'
 
 // NOTE: imported from yup/util/types.ts
-/* this seems to force TS to show the full type instead of all the wrapped generics */
-// eslint-disable-next-line @typescript-eslint/ban-types, @typescript-eslint/naming-convention
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type, @typescript-eslint/naming-convention -- this seems to force TS to show the full type instead of all the wrapped generics
 type _<T> = T extends {} ? { [k in keyof T]: T[k] } : T
 
 // NOTE: imported from yup/object.ts
@@ -27,7 +26,7 @@ declare module 'yup' {
   interface ObjectSchema<
     TIn extends Maybe<AnyObject>,
     TContext = AnyObject,
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any -- `yup/object.ts` uses this: "important that this is `any` so that using `ObjectSchema<MyType>`'s default will match object schema regardless of defaults"
     TDefault = any,
     TFlags extends Flags = '',
   > extends Schema<MakeKeysOptional<TIn>, TContext, TDefault, TFlags> {
@@ -65,6 +64,7 @@ declare module 'yup' {
   }
 }
 
+// eslint-disable-next-line @typescript-eslint/no-magic-numbers -- get first type from tuple - custom locale object
 export type YupLocaleObject = Parameters<typeof setLocale>[0]
 
 export type StringLocale = YupLocaleObject['string'] & {
