@@ -4,8 +4,6 @@
  * @Copyright: Technology Studio
  **/
 
-/* eslint-disable @typescript-eslint/ban-types */
-
 import type {
   StringSchema,
   ObjectSchema,
@@ -38,8 +36,8 @@ export const relationSchema = (
 
 export const requiredRelationSchema = (
   options: { idKey?: string, default?: string } = {},
-  // @ts-expect-error -- NOTE: yup does not return schema, instead it returns the value of given schema
 ): ObjectSchema<Record<string, StringSchema<string | null | undefined>>> => (
+  // @ts-expect-error -- NOTE: yup does not return schema, instead it returns the value of given schema
   object().requiredRelation(options.idKey).shape({
     [options.idKey ?? 'id']: stringSchema().meta({ default: options.default }),
   })
