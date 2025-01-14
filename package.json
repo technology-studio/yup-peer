@@ -50,6 +50,7 @@
     "@txo/semantic-release": "^2.0.10",
     "@txo/tsconfig-cjs": "^2.0.0",
     "@types/jest": "^29.5.14",
+    "@types/node": "^22.10.2",
     "concurrently": "^9.1.2",
     "eslint-config-txo-typescript": "^4.0.70",
     "husky": "^9.1.7",
@@ -57,7 +58,7 @@
     "lint-staged": "^15.3.0",
     "rimraf": "^6.0.1",
     "ts-jest": "^29.2.5",
-    "typescript": "^5.3.3",
+    "typescript": "^5.7.3",
     "yup": "^1.6.1"
   }
 }
