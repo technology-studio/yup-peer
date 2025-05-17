@@ -1,8 +1,9 @@
 [
-  "@typescript-eslint/no-magic-numbers",
   "@typescript-eslint/no-import-type-side-effects",
   "@typescript-eslint/no-unsafe-type-assertion",
   "@typescript-eslint/no-unnecessary-condition",
+  "@typescript-eslint/no-unnecessary-type-conversion",
+  "@typescript-eslint/no-magic-numbers",
   "@typescript-eslint/strict-boolean-expressions",
   "@stylistic/arrow-parens",
   "complexity",
