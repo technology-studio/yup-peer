@@ -1,3 +1,10 @@
+## [4.0.79](https://github.com/technology-studio/yup-peer/compare/v4.0.78...v4.0.79) (2025-08-07)
+
+
+### Bug fixes
+
+* **deps:** update dependency yup to ^1.7.0 ([#790](https://github.com/technology-studio/yup-peer/issues/790)) ([f013bf6](https://github.com/technology-studio/yup-peer/commit/f013bf67a8995441bcc8db85ae08d1d8449a9d73))
+
 ## [4.0.78](https://github.com/technology-studio/yup-peer/compare/v4.0.77...v4.0.78) (2025-05-05)
 
 
