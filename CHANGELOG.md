@@ -1,3 +1,15 @@
+## [4.0.80](https://github.com/technology-studio/yup-peer/compare/v4.0.79...v4.0.80) (2025-09-24)
+
+
+### CI
+
+* add pr.yml permissions ([#812](https://github.com/technology-studio/yup-peer/issues/812)) ([488a262](https://github.com/technology-studio/yup-peer/commit/488a262657453caef80416fdc9b2d9d4ded6aa9a))
+
+
+### Bug fixes
+
+* **deps:** update dependency yup to ^1.7.1 ([#813](https://github.com/technology-studio/yup-peer/issues/813)) ([9bc0d45](https://github.com/technology-studio/yup-peer/commit/9bc0d457e95a20ad7f6606edf2be82d270f34fee))
+
 ## [4.0.79](https://github.com/technology-studio/yup-peer/compare/v4.0.78...v4.0.79) (2025-08-07)
 
 
