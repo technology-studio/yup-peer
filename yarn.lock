@@ -2031,10 +2031,10 @@ available-typed-arrays@^1.0.7:
   dependencies:
     possible-typed-array-names "^1.0.0"
 
-awesome-phonenumber@^7.6.0:
-  version "7.6.0"
-  resolved "https://registry.yarnpkg.com/awesome-phonenumber/-/awesome-phonenumber-7.6.0.tgz#329d2e8975daaf3476c0fcbd027147ed2d987293"
-  integrity sha512-lThkL6OWN5d2P89Kgw4aR6/ShMATIOJcfeLurDW06vVAZ7V8icOpTSdtr3gfOj1Uk5pZKuBuSvVtJ70Y+8QT/Q==
+awesome-phonenumber@^7.7.0:
+  version "7.8.0"
+  resolved "https://registry.yarnpkg.com/awesome-phonenumber/-/awesome-phonenumber-7.8.0.tgz#efac4342c57bcd4bd60264a9ea71489edc9d457b"
+  integrity sha512-zw23nvKt6gLGgCrKZ5Z7ZK0lm3k39/uZTw+cWp5tpiXVfEFSt9AEVFDzSycws76G64xOMrIVp2upYvJxwRgzvw==
 
 babel-jest@^29.7.0:
   version "29.7.0"
